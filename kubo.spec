@@ -29,7 +29,11 @@ Source5:        ipfs-sysusers.conf
 Provides:       ipfs = %{version}-%{release}
 Provides:       go-ipfs = %{version}-%{release}
 
+%if 0%{?fedora}
 BuildRequires:  go-vendor-tools
+%else
+BuildRequires:  compiler(go-compiler)
+%endif
 BuildRequires:  help2man
 BuildRequires:  systemd-rpm-macros
 %{?sysusers_requires_compat}
@@ -44,8 +48,10 @@ storage, an HTTP gateway, and an RPC API.
 %goprep -p1
 tar -xf %{S:1}
 
+%if 0%{?fedora}
 %generate_buildrequires
 %go_vendor_license_buildrequires -c %{S:2}
+%endif
 
 %build
 %global gomodulesmode GO111MODULE=on
@@ -55,7 +61,9 @@ tar -xf %{S:1}
 help2man -N -s 1 -n "Global p2p merkle-dag filesystem" %{gobuilddir}/bin/ipfs -o %{gobuilddir}/ipfs.1
 
 %install
+%if 0%{?fedora}
 %go_vendor_license_install -c %{S:2}
+%endif
 
 # Binaries
 install -Dpm 0755 %{gobuilddir}/bin/ipfs %{buildroot}%{_bindir}/ipfs
@@ -103,13 +111,20 @@ install -d -m 0750 %{buildroot}%{_sharedstatedir}/ipfs
 %systemd_postun_with_restart ipfs.service
 
 %check
-%go_vendor_license_check -c %{S:2}
+%if 0%{?fedora}
+go_vendor_license -c %{S:2} report all -L --verify '%{license}'
+%endif
 %if %{with check}
 %{gobuilddir}/bin/ipfs version
 %{gobuilddir}/bin/ipfs commands
 %endif
 
+%if 0%{?fedora}
 %files -f %{go_vendor_license_filelist}
+%else
+%files
+%license LICENSE LICENSE-APACHE LICENSE-MIT
+%endif
 %doc README.md CHANGELOG.md
 %{_bindir}/ipfs
 %{_bindir}/kubo
