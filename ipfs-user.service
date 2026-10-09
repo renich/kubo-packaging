@@ -1,0 +1,15 @@
+[Unit]
+Description=InterPlanetary File System (IPFS) daemon (User Session)
+Documentation=https://docs.ipfs.tech/
+After=network.target
+
+[Service]
+Type=notify
+Environment=IPFS_PATH=%h/.ipfs
+ExecStart=/usr/bin/ipfs daemon --init --migrate
+Restart=on-failure
+KillSignal=SIGINT
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

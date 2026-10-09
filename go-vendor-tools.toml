@@ -1,0 +1,64 @@
+[archive]
+tidy = false
+
+[licensing]
+detector = "askalono"
+[[licensing.licenses]]
+path = "vendor/github.com/ipfs/go-ds-pebble/LICENSE"
+sha256sum = "9eaecaefb926e8571836b69582e83c78ae7b7e7754101c559097824cbe45fdf2"
+expression = "MIT AND Apache-2.0"
+
+[[licensing.licenses]]
+path = "vendor/github.com/ipfs/go-peertaskqueue/COPYRIGHT"
+sha256sum = "b801aa24fae2740a2613d8a5cae9ce414fe9ff937888bcbc89023b5455de1d9d"
+expression = "Apache-2.0"
+
+[[licensing.licenses]]
+path = "vendor/github.com/multiformats/go-multicodec/LICENSE"
+sha256sum = "0ec33e8775859961a3bf71bee9253c79a36a0d874aaaf411a60d14684f5a2094"
+expression = "Apache-2.0 OR MIT"
+
+[[licensing.licenses]]
+path = "vendor/github.com/multiformats/go-base36/LICENSE.md"
+sha256sum = "b5f1f21b1eea5d68df829130c545b431e9c277dd73f68a777e641e44c7fa2f0e"
+expression = "Apache-2.0 OR MIT"
+
+[[licensing.licenses]]
+path = "cmd/ipfs/dist/LICENSE"
+sha256sum = "56335a02b2804431431ae9a268db48d16d959f7ccf927a03e0c8862dcccc46ef"
+expression = "Apache-2.0 AND MIT"
+
+[[licensing.licenses]]
+path = "vendor/github.com/miekg/dns/COPYRIGHT"
+sha256sum = "66550c0ad5ca7ec1e08683e5f872cc45c741f311eee3b8ee484206ecbf9c740d"
+expression = "BSD-3-Clause"
+
+[[licensing.licenses]]
+path = "vendor/github.com/libp2p/go-libp2p-testing/LICENSE"
+sha256sum = "63e2bd973fdc646469e061efb6aaff3a90b6fc01aab121edc1c3b1b4ff09e516"
+expression = "Apache-2.0 AND MIT"
+
+[[licensing.licenses]]
+path = "LICENSE"
+sha256sum = "194b7fb642b929fb736c38c3efcae3f6509e2b840531b8ea5a75d6ddf30c9368"
+expression = "Apache-2.0 AND MIT"
+
+[[licensing.licenses]]
+path = "vendor/gopkg.in/yaml.v3/LICENSE"
+sha256sum = "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+expression = "Apache-2.0 AND MIT"
+
+[[licensing.licenses]]
+path = "vendor/go.yaml.in/yaml/v3/LICENSE"
+sha256sum = "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+expression = "Apache-2.0 AND MIT"
+
+[[licensing.licenses]]
+path = "vendor/github.com/dgraph-io/ristretto/z/LICENSE"
+sha256sum = "349fec2711443e0da8f36e388931fdfe2f874fdd4df307b9a379d01bb9764dc8"
+expression = "MIT AND Apache-2.0"
+
+[[licensing.licenses]]
+path = "vendor/github.com/libp2p/go-libp2p-pubsub/LICENSE"
+sha256sum = "74e66ee911687ef90315c9264683d9dfce242b312fbd67da3e21cb12ead9849b"
+expression = "Apache-2.0 AND MIT"

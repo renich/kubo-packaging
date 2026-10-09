@@ -1,0 +1,20 @@
+[Unit]
+Description=InterPlanetary File System (IPFS) daemon
+Documentation=https://docs.ipfs.tech/
+After=network.target
+
+[Service]
+Type=notify
+User=ipfs
+Group=ipfs
+StateDirectory=ipfs
+Environment=IPFS_PATH=/var/lib/ipfs
+ExecStart=/usr/bin/ipfs daemon --init --migrate
+Restart=on-failure
+KillSignal=SIGINT
+MemorySwapMax=0
+TimeoutStartSec=infinity
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target
